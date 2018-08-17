@@ -30,6 +30,9 @@ class Dashboard extends Component {
         const {showAnswered} = this.state 
         const {answered, unanswered} = this.props 
 
+        const list = showAnswered === true
+        ? answered
+        : unanswered
 
         return (
             <div>
@@ -46,6 +49,13 @@ class Dashboard extends Component {
                   Answered
                   </button>
                 </div>
+                <ul className = 'dashboard-list'>
+                    {list.map(poll => (
+                        <li key = {poll.id}>
+                           {poll.question} 
+                        </li>
+                    ))}
+                </ul>
             </div>
         )
     }
