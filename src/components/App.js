@@ -1,8 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {connect} from 'react-redux'; 
-import {handleInitialData} from '../actions/shared'
+import {handleInitialData} from '../actions/shared';
 import Dashboard from './dashboard.js'; 
-import LoadingBar from 'react-redux-loading'
+import LoadingBar from 'react-redux-loading';
+import Leaderboard from './Leaderboard'; 
+
+
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData())
@@ -12,7 +15,7 @@ class App extends Component {
     return (
       <div>
         <LoadingBar />
-         {this.props.loading === true ? null : <Dashboard />}
+         {this.props.loading === true ? null : <Leaderboard />}
       </div>
     )
   }
