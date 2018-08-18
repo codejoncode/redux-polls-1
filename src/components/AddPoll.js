@@ -32,13 +32,13 @@ class AddPoll extends Component {
     }
     handleSubmit = event => {
         event.preventDefault()
-        //redirect tooo.. react router 
+        this.props.history.push('/')
         this.props.dispatch(handleAddPoll(this.state))
-        console.log('Add poll: ', this.state)
+       
     }
 
     render() {
-
+        console.log(this.props)
         const {question, a, b, c, d} = this.state
 
 
